@@ -5,7 +5,7 @@
       <input type="text" id="username" placeholder="Mr. Potato" />
 
       <label for="mew">Mew</label>
-      <input type="text" id="mew" placeholder="Hello world!" />
+      <textarea id="mew" cols="30" rows="5" placeholder="Hello World!"></textarea>
     </form>
 
     <button class="button">Send your mew 😸</button>
@@ -36,7 +36,8 @@ export default {
   font-weight: 700;
 }
 
-.mew-form form input {
+.mew-form form input,
+.mew-form form textarea {
   display: block;
   width: 100%;
   padding: 10px 6px;
@@ -44,12 +45,18 @@ export default {
   margin-top: 4px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   font-size: 0.95rem;
+  font-family: 'Source Sans Pro', sans-serif;
   border-radius: 8px;
 
-  transition: box-shadow 0.15s;
+  transition: box-shadow 0.2s;
 }
 
-.mew-form form input:focus {
+.mew-form form textarea {
+  resize: none;
+}
+
+.mew-form form input:focus,
+.mew-form form textarea:focus {
   box-shadow: 0 0 4px #3498db;
 }
 
@@ -67,6 +74,7 @@ export default {
   cursor: pointer;
 
   transition: box-shadow 0.2s, filter 0.2s;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .button:hover {
@@ -76,5 +84,11 @@ export default {
 
 .button:active {
   filter: brightness(0.88);
+}
+
+@media (max-width: 825px) {
+  .mew-form {
+    width: 100%;
+  }
 }
 </style>

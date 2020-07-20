@@ -25,6 +25,7 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 html,
@@ -37,7 +38,6 @@ body {
 }
 
 #app {
-  font-family: 'Source Sans Pro', sans-serif;
   width: 80%;
   display: flex;
   flex-direction: column;

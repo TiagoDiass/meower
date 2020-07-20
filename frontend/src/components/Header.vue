@@ -17,4 +17,10 @@ export default {
   display: flex;
   justify-content: center;
 }
+
+@media (max-width: 820px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+}
 </style>
