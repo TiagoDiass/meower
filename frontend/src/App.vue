@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <Header />
+    <MewForm />
   </div>
 </template>
 
 <script>
 import Header from './components/Header';
+import MewForm from './components/MewForm';
 
 export default {
   name: 'App',
   components: {
     Header,
+    MewForm,
   },
 };
 </script>
@@ -36,5 +39,15 @@ body {
 #app {
   font-family: 'Source Sans Pro', sans-serif;
   width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media (max-width: 566px) {
+  #app {
+    width: 100%;
+  }
 }
 </style>
