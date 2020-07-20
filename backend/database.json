@@ -1,0 +1,22 @@
+{
+  "mews": [
+    {
+      "id": 1,
+      "username": "Tiago Dias",
+      "mewBody": "This is my first mew, hope you guys be friendly with me",
+      "posted_at": 1008161848000
+    },
+    {
+      "id": 2,
+      "username": "Lucas Lima",
+      "mewBody": "I created an account here cuz my cousin told me that would be funny",
+      "posted_at": 1082210248000
+    },
+    {
+      "id": 3,
+      "username": "Tiaguito",
+      "mewBody": "Okay, let's create a new mew",
+      "posted_at": 1595255134663
+    }
+  ]
+}
