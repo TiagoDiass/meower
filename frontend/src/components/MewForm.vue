@@ -2,19 +2,59 @@
   <div class="mew-form">
     <form>
       <label for="username">Your username</label>
-      <input type="text" id="username" placeholder="Mr. Potato" />
+      <input type="text" id="username" placeholder="Mr. Potato" v-model="form.username" />
 
       <label for="mew">Mew</label>
-      <textarea id="mew" cols="30" rows="5" placeholder="Hello World!"></textarea>
+      <textarea
+        id="mew"
+        cols="30"
+        rows="5"
+        placeholder="Hello World!"
+        v-model="form.mewBody"
+      ></textarea>
     </form>
 
-    <button class="button">Send your mew 😸</button>
+    <button class="button" @click="postMew">Send your mew 😸</button>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
   name: 'mew-form',
+
+  data: () => ({
+    form: {
+      username: '',
+      mewBody: '',
+    },
+  }),
+
+  methods: {
+    ...mapActions({
+      postMewAction: 'mews/postMew',
+      fetchMews: 'mews/fetchMews',
+    }),
+
+    async postMew() {
+      const response = await this.postMewAction(this.form);
+
+      if (response.status == 201) {
+        this.$swal({
+          icon: 'success',
+          title: 'Good job',
+          text: response.message,
+        });
+        this.fetchMews();
+      } else {
+        this.$swal({
+          icon: 'error',
+          title: 'Ops...',
+          text: response.message,
+        });
+      }
+    },
+  },
 };
 </script>
 

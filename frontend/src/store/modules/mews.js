@@ -16,7 +16,32 @@ const actions = {
   async fetchMews({ commit }) {
     const response = await Vue.prototype.$httpClient.get('/mews');
 
-    commit('setMews', response.data.data);
+    let mewsArrayOrderedByTimestamp = [];
+
+    for (let i = response.data.data.length - 1; i >= 0; i--) {
+      mewsArrayOrderedByTimestamp.push(response.data.data[i]);
+    }
+
+    commit('setMews', mewsArrayOrderedByTimestamp);
+  },
+
+  async postMew(_, { username, mewBody }) {
+    const response = await Vue.prototype.$httpClient.post('/mews/create', {
+      username,
+      mewBody,
+    });
+
+    if (response.data.status == 201) {
+      return {
+        status: response.data.status,
+        message: 'Mew posted succesfully',
+      };
+    } else {
+      return {
+        status: response.data.status,
+        message: response.data.message,
+      };
+    }
   },
 };
 

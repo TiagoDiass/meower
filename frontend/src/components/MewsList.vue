@@ -11,6 +11,10 @@ import Mew from './Mew';
 export default {
   name: 'mew-list',
 
+  data: () => ({
+    mewsCopy: [],
+  }),
+
   components: {
     Mew,
   },

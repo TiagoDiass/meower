@@ -38,11 +38,11 @@ export default {
 }
 
 .mew:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
 .mew h3 {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1.2rem;
   margin-bottom: 8px;
 }
