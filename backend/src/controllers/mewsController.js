@@ -19,24 +19,27 @@ module.exports = {
   },
 
   create(request, response) {
-    const { username, mewBody } = request.body;
+    const {
+      username,
+      mewBody
+    } = request.body;
 
     if (!username) {
-      return response.status(400).json({
+      return response.status(200).json({
         status: 400,
         message: 'You must insert an username for your mew',
       });
     }
 
     if (!mewBody) {
-      return response.status(400).json({
+      return response.status(200).json({
         status: 400,
         message: 'Your mew cannot be empty',
       });
     }
 
     // Taking the last used id from the last element on the array
-    const lastUsedId = data.mews[data.mews.length - 1].id;
+    const lastUsedId = data.mews.length ? data.mews[data.mews.length - 1].id : 1;
 
     const newMew = {
       id: lastUsedId + 1,
