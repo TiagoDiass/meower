@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center">
-  This is a basic twitter clone for cats developed with Vue.js and Node.js
+  This is a very basic twitter clone for cats developed with Vue.js and Node.js
 </h4>
 
 <p align="center">
