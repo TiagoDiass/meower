@@ -2,18 +2,32 @@
   <div id="app">
     <Header />
     <MewForm />
+    <MewList />
   </div>
 </template>
 
 <script>
 import Header from './components/Header';
 import MewForm from './components/MewForm';
+import MewList from './components/MewsList';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'App',
   components: {
     Header,
     MewForm,
+    MewList,
+  },
+
+  mounted() {
+    this.fetchMews();
+  },
+
+  methods: {
+    ...mapActions({
+      fetchMews: 'mews/fetchMews',
+    }),
   },
 };
 </script>
@@ -38,7 +52,7 @@ body {
 }
 
 #app {
-  width: 80%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

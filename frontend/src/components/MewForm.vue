@@ -88,7 +88,7 @@ export default {
 
 @media (max-width: 825px) {
   .mew-form {
-    width: 100%;
+    width: 90%;
   }
 }
 </style>

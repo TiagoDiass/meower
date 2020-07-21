@@ -11,6 +11,10 @@ export default {
 </script>
 
 <style>
+.header {
+  margin-top: 16px;
+}
+
 .header h1 {
   font-weight: 400;
   font-size: 3rem;
@@ -18,9 +22,15 @@ export default {
   justify-content: center;
 }
 
-@media (max-width: 820px) {
+@media (max-width: 940px) {
   .header h1 {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 625px) {
+  .header h1 {
+    font-size: 1.5rem;
   }
 }
 </style>
